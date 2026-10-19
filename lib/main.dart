@@ -112,26 +112,34 @@ class TelaDashboard extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 // TODO [Desafio 6]: Substituir o Container simples por um Card do Material com elevation: 4
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
+                
+
+		Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.grey.shade300),
                   ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.star, size: 48, color: Colors.amber),
-                      const SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Gavião-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
-                        ],
-                      ),
-                    ],
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.grey.shade300),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.star, size: 48, color: Colors.amber),
+                        const SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAlignment.start,
+                          children: const [
+                            Text('Gavião-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Positioned(
@@ -149,8 +157,27 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-                // TODO [Desafio 5]: Adicionar segundo Positioned no canto inferior esquerdo:
+
+		// TODO [Desafio 5]: Adicionar segundo Positioned no canto inferior esquerdo:
                 // Positioned(bottom: -8, left: -8, child: Container(color: Colors.green, child: Text('Confirmado')))
+              ],
+            ),
+
+            Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
+                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
               ],
             ),
 
