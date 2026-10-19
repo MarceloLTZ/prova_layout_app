@@ -132,7 +132,7 @@ class TelaDashboard extends StatelessWidget {
                         const Icon(Icons.star, size: 48, color: Colors.amber),
                         const SizedBox(width: 16),
                         Column(
-                          crossAxisAlignment: CrossAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
                             Text('Gavião-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                             Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
@@ -178,23 +178,37 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-
-            const SizedBox(height: 24.0),
-
-            // ===================================================================
-            // 📍 DESAFIO 3 (2,0 pontos):
+            // DESAFIO 3 (2,0 pontos):
             // Criar a seção "Últimos Registros" com Container, Row, ícone de lista,
             // texto e botão/ícone com MainAxisAlignment.spaceBetween.
-            // ===================================================================
-            // TODO [Desafio 3]: Implementar a seção "Últimos Registros" aqui
 
-            // ===================================================================
-            // 📍 DESAFIO 4 (1,5 ponto):
-            // Demonstrar/comprovar a ocorrência e correção de um erro de overflow
-            // (RenderFlex overflow) via prints ou bloco comentado.
-            // ===================================================================
+
+		// TODO [Desafio 3]: Implementar a seção "Últimos Registros" aqui
+
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.star, color: Colors.amber),
+                  const SizedBox(width: 8),
+                  const Expanded(
+                    child: Text(
+                      "Últimos Registros",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.arrow_forward_ios, size: 18, color: Colors.teal),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
