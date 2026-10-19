@@ -55,45 +55,43 @@ class TelaDashboard extends StatelessWidget {
             // Desafio 1: Adicionar o 3º Card (Icons.camera_alt, '45', 'Fotos') com Expanded.
             // Desafio 8: Refatorar esta seção usando GridView.count (grade 2x2).
             // ===================================================================
-            Row(
+              
+	    GridView.count(
+              crossAxisCount: 2,
+              crossAxisSpacing: 12.0,
+              mainAxisSpacing: 12.0,
+		childAspectRatio: 3.0,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('124', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Aves Vistas', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.flutter_dash,
+                  valor: '124',
+                  rotulo: 'Aves Vistas',
+                  corFundo: Colors.teal.shade100,
                 ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.place, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.place,
+                  valor: '18',
+                  rotulo: 'Locais Visitados',
+                  corFundo: Colors.teal.shade50,
                 ),
-                const SizedBox(width: 12.0),
-                // TODO [Desafio 1]: Adicionar aqui o terceiro Card com Expanded (Ícone: Icons.camera_alt, '45', 'Fotos')
+
+		  // TODO [Desafio 1]: Adicionar aqui o terceiro Card com Expanded (Ícone: Icons.camera_alt, '45', 'Fotos')
+
+            
+		BlocoEstatistica(
+                  icone: Icons.camera_alt,
+                  valor: '45',
+                  rotulo: 'Fotos',
+                  corFundo: Colors.teal.shade100,
+                ),
+                BlocoEstatistica(
+                  icone: Icons.star,
+                  valor: '5',
+                  rotulo: 'Raridades',
+                  corFundo: Colors.teal.shade50,
+                ),
               ],
             ),
             const SizedBox(height: 24.0),
@@ -104,7 +102,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
 
-            // ===================================================================
+	    // ===================================================================
             // 📍 DESAFIO 5 (2,0 pontos) & DESAFIO 6 (1,5 ponto):
             // Desafio 5: Adicionar o 2º selo no Stack (bottom: -8, left: -8)
             //            com texto "Confirmado" e cor verde (Colors.green).
